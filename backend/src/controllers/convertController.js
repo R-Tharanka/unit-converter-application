@@ -26,8 +26,14 @@ async function convertHandler(req, res) {
         // Save conversion to history only if requested
         let savedDoc = null;
         if (save) {
-            savedDoc = await History.create(payload);
+            // ensure user present
+            if (!req.user || !req.user.id) {
+                // if you want anonymous fallback, handle here; otherwise require auth
+                throw new Error('Authentication required to save history');
+            }
+            savedDoc = await History.create({ userId: req.user.id, ...payload });
         }
+
 
         // Send successful response
         res.json({
