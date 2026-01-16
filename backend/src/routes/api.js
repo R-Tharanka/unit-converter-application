@@ -1,6 +1,6 @@
 const express = require('express');
 const { convertHandler } = require('../controllers/convertController');
-const validateConvert = require('../validators/convertValidator');
+const validateConvert = require('../middlewares/convertValidator');
 const History = require('../models/History');
 
 const router = express.Router();
