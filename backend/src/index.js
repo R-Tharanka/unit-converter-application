@@ -3,7 +3,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const helmet = require('helmet');
-const rateLimit = require('express-rate-limit');
 const apiRoutes = require('./routes/api');
 
 const app = express();
@@ -16,13 +15,6 @@ app.use(express.json());
 if (process.env.NODE_ENV !== 'test') {
   app.use(morgan('combined'));
 }
-
-// Rate limiting
-const limiter = rateLimit({
-  windowMs: 60 * 1000,
-  max: 100,
-});
-app.use(limiter);
 
 // Routes
 app.use('/api', apiRoutes);
