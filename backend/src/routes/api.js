@@ -45,3 +45,5 @@ router.delete('/history', auth, async (req, res) => {
   const r = await History.deleteMany({ userId: req.user.id });
   res.json({ deletedCount: r.deletedCount });
 });
+
+module.exports = router;
