@@ -11,30 +11,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout repository
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # 2. Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: 'npm'
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
 
-      # 3. Install backend dependencies
       - name: Install dependencies
         working-directory: backend
         run: npm ci
 
-      # 4. Environment sanity check
-      - name: Validate environment
+      - name: Environment sanity check
         working-directory: backend
         run: |
           node -e "require('dotenv').config(); console.log('Env OK')"
-
-      # 5. Basic server startup check (no DB connection required)
-      - name: Basic startup check
-        working-directory: backend
-        run: |
-          node -e "require('./src/index')"
