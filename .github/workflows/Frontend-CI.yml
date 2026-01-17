@@ -1,0 +1,58 @@
+
+# Frontend Continuous Integration workflow
+# Builds the Vite + React frontend on every relevant change
+
+name: Frontend CI
+
+on:
+  # Run when frontend code is pushed to main or frontend branches
+  push:
+    branches: [ main, frontend ]
+    paths:
+      - frontend/**
+  # Run for pull requests that affect frontend code
+  pull_request:
+    branches: [ main, develop ]
+    paths:
+      - frontend/**
+
+jobs:
+  frontend:
+    # Use GitHub-hosted Ubuntu runner
+    runs-on: ubuntu-latest
+
+    # All commands run inside the frontend directory
+    defaults:
+      run:
+        working-directory: frontend
+
+    steps:
+      # Fetch repository source code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Setup Node.js with npm caching for faster builds
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      # Install dependencies using clean, reproducible install
+      - name: Install dependencies
+        run: npm ci
+
+      # Inject backend API URL for Vite at build time
+      # Uses GitHub secret if available, otherwise falls back to local dev URL
+      - name: Configure environment
+        run: |
+          if [ -n "${{ secrets.FRONTEND_API_BASE_URL }}" ]; then
+            echo "VITE_API_BASE_URL=${{ secrets.FRONTEND_API_BASE_URL }}" > .env.production
+          else
+            echo "VITE_API_BASE_URL=http://localhost:5000/api" > .env.production
+          fi
+
+      # Build optimized production bundle
+      - name: Build frontend
+        run: npm run build

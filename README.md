@@ -2,8 +2,8 @@
 
 ## Group Information
 - **Student 1:** [U.L.P. Madhubhashitha] - [ ITBNM-2313-0045 ] - Role: [ Backend Developer]
-- **Student 2:** [D.M. Shehani Nikeshala] - [ ITBNM-2313-0053 ] - Role: [Role Name]
-- **Student 3:** [L.A.D.H. Hemal Hansanath] - [ ITBNM-2313-0030 ] - Role: [Role Name]
+- **Student 2:** [D.M. Shehani Nikeshala] - [ ITBNM-2313-0053 ] - Role: [ Frontend Developer]
+- **Student 3:** [L.A.D.H. Hemal Hansanath] - [ ITBNM-2313-0030 ] - Role: [ DevOps & Integration]
 
 ## Project Description
 A simple unit conversion web application (MERN) that converts between different measurement units (length, temperature, weight, etc.) and records conversion history via a lightweight API.
@@ -18,7 +18,12 @@ A simple unit conversion web application (MERN) that converts between different 
 - React.js , TailwindCSS
 - Node.js (Express)
 - GitHub Actions (CI/CD)
-- [Deployment platform name — e.g., Vercel, Render]
+
+## Technologies Used
+- React.js, Tailwind CSS
+- Node.js (Express)
+- GitHub Actions (CI/CD)
+- Deployment platforms: Vercel (Frontend), Railway (Backend)
 
 ## Features
 - Convert between multiple unit types (length, temperature, mass, etc.)
@@ -32,19 +37,21 @@ We implemented the following branching strategy:
 - `backend` - Backend development branch
 
 ## Individual Contributions
-### [Student 1 Name]
-- Repository setup and configuration
-- GitHub Actions CI/CD pipeline implementation
-- Deployment setup and management
-- [List specific commits/features]
+### [U.L.P. Madhubhashitha (Backend Developer)]
+- Designed and developed the RESTful API using Node.js and Express.
+- Implemented JWT-based authentication and secure endpoints.
+- Managed backend data logic for unit conversions and user history.
 
-### [Student 2 Name]
-- [List specific features developed]
-- [List specific commits/contributions]
+### [D.M. Shehani Nikeshala (Frontend Developer)]
+- Built the user interface using React.js and Tailwind CSS v4.
+- Implemented client-side routing and state management.
+- Integrated the frontend with the backend API using Axios.
 
-### [Student 3 Name]
-- [List specific features developed]
-- [List specific commits/contributions]
+### [L.A.D.H. Hemal Hansanath (DevOps & Integration)]
+- Configured the GitHub Actions CI/CD pipeline for automated testing and deployment.
+- Managed the branching strategy and resolved technical integration hurdles.
+- Set up and managed the deployment environment on Railway.
+
 
 ## Setup Instructions
 **Prerequisites**
@@ -52,14 +59,21 @@ We implemented the following branching strategy:
 - Git
 
 **Installation**
+
+#### Clone the repository
 ```bash
-# Clone the repository
 git clone https://github.com/HansaHH/unit-converter-application-devops-assignment.git
-# Navigate to project directory
+```
+#### Navigate to project directory
+```bash
 cd unit-converter-application-devops-assignment/backend
-# Install dependencies
+```
+#### Install dependencies
+```bash
 npm install
-# Run development server
+```
+#### Run development server
+```bash
 npm run dev
 ```
 
@@ -72,9 +86,12 @@ The project uses GitHub Actions for CI/CD. A pipeline runs tests/builds on pushe
 
 ## Challenges Faced
 [ * Implementing conditional authentication for the translation endpoint.]
-[ * Handling CORS issues between the Vite dev server and the Express backend.]
 [ * Configuring Tailwind CSS v4 with PostCSS in a MERN environment.]
-
+[ * Fixed communication errors between frontend and backend.]
+[ * Synced team roles for smoother API integration.]
+[ * Fixed syntax errors in the Railway deployment script.]
+[ * Resolved branch conflicts during code integration.]
+[ * Fixed broken links and troubleshooting build failures.]
 
 
 ----
