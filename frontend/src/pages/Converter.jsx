@@ -8,7 +8,7 @@ export default function Converter() {
     const [latest, setLatest] = useState(null);
 
     return (
-        <div className="min-h-screen p-6 bg-gray-50">
+        <div>
             <h1 className="text-2xl font-semibold mb-6">Unit Converter</h1>
             <div className="max-w-xl mx-auto">
                 <ConverterForm onResult={(data) => setLatest(data)} />
