@@ -16,4 +16,4 @@ The conflict was resolved successfully, committed, and merged following
 Git best practices.
 
 ### Conflict Evidence
-
+![Merge Conflict Resolution Screenshot] (https://imgur.com/a/V1rXLzH)
