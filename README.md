@@ -85,15 +85,12 @@ The project uses GitHub Actions for CI/CD. A pipeline runs tests/builds on pushe
 ![Deploy](https://github.com/HansaHH/unit-converter-application-devops-assignment/workflows/Deploy%20to%20Production/badge.svg)
 
 ## Challenges Faced
-[ * Implementing conditional authentication for the translation endpoint.]
-[ * Configuring Tailwind CSS v4 with PostCSS in a MERN environment.]
-[ * Fixed communication errors between frontend and backend.]
-[ * Synced team roles for smoother API integration.]
-[ * Fixed syntax errors in the Railway deployment script.]
-[ * Resolved branch conflicts during code integration.]
-[ * Fixed broken links and troubleshooting build failures.]
-
-
-----
+ - Implementing conditional authentication for the translation endpoint.
+ - Configuring Tailwind CSS v4 with PostCSS in a MERN environment.
+ - Fixed communication errors between frontend and backend.
+ - Synced team roles for smoother API integration.
+ - Fixed syntax errors in the Railway deployment script.
+ - Resolved branch conflicts during code integration.
+ - Fixed broken links and troubleshooting build failures.
 
 
