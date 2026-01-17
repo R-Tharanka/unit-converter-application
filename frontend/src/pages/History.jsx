@@ -3,6 +3,7 @@
 // Requires user to be logged in (AuthContext provides user).
 
 import { useEffect, useState, useContext } from 'react';
+import { Link } from 'react-router-dom';
 import api from '../services/api';
 import { AuthContext } from '../context/AuthContext';
 
@@ -35,12 +36,18 @@ export default function HistoryPage() {
     return () => { mounted = false; };
   }, [user, page, limit]);
 
-  if (!user) return <div className="p-6">Please <a href="/auth" className="text-blue-600 underline">log in</a> to view history.</div>;
+  if (!user) {
+    return (
+      <div>
+        Please <Link to="/auth" className="text-blue-600 underline">log in</Link> to view history.
+      </div>
+    );
+  }
 
   const totalPages = Math.max(1, Math.ceil(total / limit));
 
   return (
-    <div className="min-h-screen p-6 bg-gray-50">
+    <div>
       <h2 className="text-2xl font-semibold mb-4">Your history</h2>
 
       {loading && <p>Loading...</p>}
