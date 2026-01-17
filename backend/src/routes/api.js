@@ -18,10 +18,14 @@ router.post('/auth/login', loginHandler);
 
 // convert - allow anonymous conversion but require auth to save
 router.post('/convert', validateConvert, (req, res, next) => {
-  // if Authorization header present, let auth middleware attach req.user
-  // otherwise continue as anonymous; convertHandler will enforce save behavior
-  next();
-}, convertHandler);
+    // If a token is present run the auth middleware; otherwise continue anonymously
+    if (req.headers.authorization) {
+      return auth(req, res, next);
+    }
+    return next();
+  },
+  convertHandler
+);
 
 // get user's history (protected)
 router.get('/history', auth, async (req, res) => {
