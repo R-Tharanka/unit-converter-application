@@ -1,10 +1,11 @@
 require('dotenv').config();
 const express = require('express');
-const mongoose = require('mongoose');
 const morgan = require('morgan');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
+
 const apiRoutes = require('./routes/api');
+const connectDB = require('./config/database');
 
 const app = express();
 
@@ -27,20 +28,13 @@ app.use(limiter);
 // Routes
 app.use('/api', apiRoutes);
 
-// Server + DB
+// Server start
 const PORT = process.env.PORT || 5000;
-const MONGO_URI = process.env.MONGO_URI;
 
-mongoose.connect(MONGO_URI)
-  .then(() => {
-    console.log('MongoDB connected');
-    app.listen(PORT, () =>
-      console.log(`Server listening on port ${PORT}`)
-    );
-  })
-  .catch((err) => {
-    console.error('MongoDB connection error:', err.message);
-    process.exit(1);
+connectDB().then(() => {
+  app.listen(PORT, () => {
+    console.log(`Server listening on port ${PORT}`);
   });
+});
 
 module.exports = app;
