@@ -31,6 +31,12 @@ We implemented the following branching strategy:
 - `main` - Production branch
 - `develop` - Integration branch
 - `backend` - Backend development branch
+- `frontend` - Frontend development branch
+- `developer-hhh` - CI/CD Pipeline & Integration Setup
+- `feature/readme-update-a` - Handling merge conflict
+- `frontend-backup` - Frontend Redundancy & Fallback Strategy
+- `feature/frontend-setup` - Frontend environment & dependency Setup
+- `feature/backend-api-docs` - Document backend endpoints and data structures
 
 ## Individual Contributions
 ### [U.L.P. Madhubhashitha (Backend Developer)]
