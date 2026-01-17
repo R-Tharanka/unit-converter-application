@@ -71,7 +71,10 @@ The project uses GitHub Actions for CI/CD. A pipeline runs tests/builds on pushe
 ![Deploy](https://github.com/HansaHH/unit-converter-application-devops-assignment/workflows/Deploy%20to%20Production/badge.svg)
 
 ## Challenges Faced
-[-------------------------]
+[ * Implementing conditional authentication for the translation endpoint.]
+[ * Handling CORS issues between the Vite dev server and the Express backend.]
+[ * Configuring Tailwind CSS v4 with PostCSS in a MERN environment.]
+
 
 
 ----
