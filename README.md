@@ -15,13 +15,9 @@ A simple unit conversion web application (MERN) that converts between different 
 **GitHub:** https://github.com/HansaHH/unit-converter-application-devops-assignment.git
 
 ## Technologies Used
-- React.js , TailwindCSS
-- Node.js (Express)
-- GitHub Actions (CI/CD)
-
-## Technologies Used
 - React.js, Tailwind CSS
 - Node.js (Express)
+- MongoDB Atlas
 - GitHub Actions (CI/CD)
 - Deployment platforms: Vercel (Frontend), Railway (Backend)
 
