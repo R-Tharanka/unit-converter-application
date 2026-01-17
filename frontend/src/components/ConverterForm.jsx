@@ -27,15 +27,22 @@ export default function ConverterForm({ onResult }) {
         e.preventDefault();
         setError('');
 
-        if (value === '' || isNaN(Number(value))) {
+        const numericValue = Number(value);
+
+        if (value === '' || Number.isNaN(numericValue)) {
             setError('Please enter a numeric value.');
+            return;
+        }
+
+        if (category !== 'temperature' && numericValue < 0) {
+            setError('Negative values are only allowed for temperature conversions.');
             return;
         }
 
         try {
             setLoading(true);
             const res = await api.post('/convert', {
-                value: Number(value),
+                value: numericValue,
                 from,
                 to,
                 category,
