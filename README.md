@@ -52,14 +52,21 @@ We implemented the following branching strategy:
 - Git
 
 **Installation**
+
+#### Clone the repository
 ```bash
-# Clone the repository
 git clone https://github.com/HansaHH/unit-converter-application-devops-assignment.git
-# Navigate to project directory
+```
+#### Navigate to project directory
+```bash
 cd unit-converter-application-devops-assignment/backend
-# Install dependencies
+```
+#### Install dependencies
+```bash
 npm install
-# Run development server
+```
+#### Run development server
+```bash
 npm run dev
 ```
 
