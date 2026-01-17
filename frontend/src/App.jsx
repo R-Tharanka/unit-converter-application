@@ -1,7 +1,16 @@
+// App.jsx
+// Top-level routing. Keep this file minimal - routes map to pages.
+import { Routes, Route } from 'react-router-dom';
+import AuthPage from './pages/Auth';
+import Converter from './pages/Converter';
+import History from './pages/History';
+
 export default function App() {
   return (
-    <h1 className="text-4xl font-bold text-blue-600">
-      Tailwind v4 is working
-    </h1>
+    <Routes>
+      <Route path="/" element={<Converter />} />
+      <Route path="/auth" element={<AuthPage />} />
+      <Route path="/history" element={<History />} />
+    </Routes>
   );
 }
