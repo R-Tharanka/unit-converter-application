@@ -1,9 +1,9 @@
 # Unit Converter Application (DevOps Assignment)
 
 ## Group Information
-- **Student 1:** [Full Name as in LMS] - [Student ID] - Role: [Role Name]
-- **Student 2:** [Full Name as in LMS] - [Student ID] - Role: [Role Name]
-- **Student 3:** [Full Name as in LMS] - [Student ID] - Role: [Role Name]
+- **Student 1:** [U.L.P. Madhubhashitha] - [ ITBNM-2313-0045 ] - Role: [ Backend Developer]
+- **Student 2:** [D.M. Shehani Nikeshala] - [ ITBNM-2313-0053 ] - Role: [Role Name]
+- **Student 3:** [L.A.D.H. Hemal Hansanath] - [ ITBNM-2313-0030 ] - Role: [Role Name]
 
 ## Project Description
 A simple unit conversion web application (MERN) that converts between different measurement units (length, temperature, weight, etc.) and records conversion history via a lightweight API.
@@ -71,7 +71,10 @@ The project uses GitHub Actions for CI/CD. A pipeline runs tests/builds on pushe
 ![Deploy](https://github.com/HansaHH/unit-converter-application-devops-assignment/workflows/Deploy%20to%20Production/badge.svg)
 
 ## Challenges Faced
-[-------------------------]
+[ * Implementing conditional authentication for the translation endpoint.]
+[ * Handling CORS issues between the Vite dev server and the Express backend.]
+[ * Configuring Tailwind CSS v4 with PostCSS in a MERN environment.]
+
 
 
 ----
