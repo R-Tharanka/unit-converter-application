@@ -9,7 +9,7 @@
 A simple unit conversion web application (MERN) that converts between different measurement units (length, temperature, weight, etc.) and records conversion history via a lightweight API.
 
 ## Live Deployment
-**Live URL:** [.....................]
+**Live URL:** [https://unit-convertor-hz.netlify.app/]
 
 ## Repository
 **GitHub:** https://github.com/HansaHH/unit-converter-application-devops-assignment.git
@@ -81,19 +81,19 @@ npm run dev
 The project uses GitHub Actions for CI/CD. A pipeline runs tests/builds on pushes to `develop` and `main`, and automatically deploys to the configured deployment platform on successful merges to `main`.
 
 ## Build Status Badges
-![CI Pipeline](https://github.com/HansaHH/unit-converter-application-devops-assignment/workflows/CI%20Pipeline/badge.svg)
-![Deploy](https://github.com/HansaHH/unit-converter-application-devops-assignment/workflows/Deploy%20to%20Production/badge.svg)
+
+![Frontend CI](https://github.com/HansaHH/unit-converter-application-devops-assignment/actions/workflows/Frontend-CI.yml/badge.svg)
+![Frontend CD](https://github.com/HansaHH/unit-converter-application-devops-assignment/actions/workflows/Frontend-CD.yml/badge.svg)
+![Backend CD](https://github.com/HansaHH/unit-converter-application-devops-assignment/actions/workflows/Backend-CD.yml/badge.svg)
+![Backend CI](https://github.com/HansaHH/unit-converter-application-devops-assignment/actions/workflows/Backend-CI.yml/badge.svg)
 
 ## Challenges Faced
-[ * Implementing conditional authentication for the translation endpoint.]
-[ * Configuring Tailwind CSS v4 with PostCSS in a MERN environment.]
-[ * Fixed communication errors between frontend and backend.]
-[ * Synced team roles for smoother API integration.]
-[ * Fixed syntax errors in the Railway deployment script.]
-[ * Resolved branch conflicts during code integration.]
-[ * Fixed broken links and troubleshooting build failures.]
-
-
-----
+ - Implementing conditional authentication for the translation endpoint.
+ - Configuring Tailwind CSS v4 with PostCSS in a MERN environment.
+ - Fixed communication errors between frontend and backend.
+ - Synced team roles for smoother API integration.
+ - Fixed syntax errors in the Railway deployment script.
+ - Resolved branch conflicts during code integration.
+ - Fixed broken links and troubleshooting build failures.
 
 
