@@ -18,7 +18,7 @@ A simple unit conversion web application (MERN) that converts between different 
 - React.js , TailwindCSS
 - Node.js (Express)
 - GitHub Actions (CI/CD)
-- [Deployment platform name — e.g., Vercel, Render]
+- [Deployment platform name : Render, Verce]
 
 ## Features
 - Convert between multiple unit types (length, temperature, mass, etc.)
