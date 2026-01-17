@@ -1,4 +1,4 @@
-name: Frontend CD (Vercel)
+name: Frontend CD (Netlify)
 
 on:
   push:
@@ -12,31 +12,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout repository
+      # Checkout repository
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2. Setup Node.js
+      # Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      # 3. Install dependencies
+      # Install frontend dependencies
       - name: Install dependencies
         working-directory: frontend
-        run: npm install
+        run: npm ci
 
-      # 4. Build frontend
+      # Build frontend (Vite -> dist/)
       - name: Build frontend
         working-directory: frontend
         run: npm run build
 
-      # 5. Deploy to Vercel
-      - name: Deploy to Vercel
-        working-directory: frontend
+      # Deploy to Netlify
+      - name: Deploy to Netlify
+        uses: netlify/actions/cli@master
+        with:
+          args: deploy --prod --dir=frontend/dist
         env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-        run: |
-          npm install -g vercel
-          vercel --prod --token $VERCEL_TOKEN --yes
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
