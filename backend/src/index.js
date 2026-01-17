@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const helmet = require('helmet');
+const cors = require('cors');
 const rateLimit = require('express-rate-limit');
 
 const apiRoutes = require('./routes/api');
@@ -12,6 +13,12 @@ const app = express();
 // Security & parsing
 app.use(helmet());
 app.use(express.json());
+
+// CORS for the Vite dev server (adjust origin as needed)
+app.use(cors({
+  origin: process.env.CLIENT_ORIGIN || 'http://localhost:5173',
+  credentials: true,
+}));
 
 // Logging
 if (process.env.NODE_ENV !== 'test') {
