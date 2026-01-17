@@ -62,6 +62,8 @@ We implemented the following branching strategy:
 
 **Installation**
 
+### Backend Setup
+
 #### Clone the repository
 ```bash
 git clone https://github.com/HansaHH/unit-converter-application-devops-assignment.git
@@ -78,6 +80,41 @@ npm install
 ```bash
 npm run dev
 ```
+
+### Frontend Setup
+
+**Prerequisites**
+- Node.js (version 18 or higher)
+- Git
+
+**Install & run locally**
+
+```bash
+# go to frontend folder
+cd frontend
+
+# install dependencies (use `npm ci` on CI / fresh clones)
+npm install
+
+# run dev server (Vite)
+npm run dev
+# open http://localhost:5173 in your browser
+```
+
+## Environment Variables
+
+### Backend (.env)
+
+**Required**
+- `MONGO_URI` - Connection string for the MongoDB Atlas cluster.
+- `JWT_SECRET` - Secret used to sign and verify JWT access tokens.
+- `JWT_EXPIRES_IN` - Token lifetime override (defaults to "7d").
+- `CLIENT_ORIGIN` - Allowed CORS origin for the frontend (defaults to "http://localhost:5173").
+- `PORT` - Port for the Express server (defaults to 5000).
+- `NODE_ENV` - Runtime mode flag used for conditional logging (defaults to "development").
+
+### Frontend (.env)
+- `VITE_API_BASE_URL` - Base URL for API requests (e.g., "http://localhost:5000/api").
 
 **Deployment Process (CI/CD)**
 The project uses GitHub Actions for CI/CD. A pipeline runs tests/builds on pushes to `develop` and `main`, and automatically deploys to the configured deployment platform on successful merges to `main`.
@@ -97,5 +134,3 @@ The project uses GitHub Actions for CI/CD. A pipeline runs tests/builds on pushe
  - Fixed syntax errors in the Railway deployment script.
  - Resolved branch conflicts during code integration.
  - Fixed broken links and troubleshooting build failures.
-
-
