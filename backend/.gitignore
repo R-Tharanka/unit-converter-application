@@ -40,9 +40,6 @@ desktop.ini
 *.log.*
 /npm-debug.log
 
-# Node modules
-node_modules/
-
 # Environment files
 .env
 .env.local
@@ -82,3 +79,4 @@ desktop.ini
 *.log.*
 
 /npm-debug.log
+
