@@ -31,8 +31,8 @@ jobs:
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
         run: |
-          # login in CI mode using the token
-          railway login --ci "$RAILWAY_TOKEN"
+          # authenticate non-interactively using the service token
+          railway login --token "$RAILWAY_TOKEN"
           # optional check
           railway whoami
 
