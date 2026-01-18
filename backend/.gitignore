@@ -39,8 +39,7 @@ desktop.ini
 *.tgz
 *.log.*
 /npm-debug.log
-```// filepath: d:\hemal\praveen- backend\unit-converter-application-devops-assignment\backend\.gitignore
-...existing code...
+
 # Node modules
 node_modules/
 
@@ -81,4 +80,5 @@ desktop.ini
 # Misc
 *.tgz
 *.log.*
+
 /npm-debug.log
