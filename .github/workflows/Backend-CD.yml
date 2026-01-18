@@ -24,13 +24,24 @@ jobs:
 
       # Install Railway CLI
       - name: Install Railway CLI
-        run: npm install -g @railway/cli
+        run: npm install -g @railway/cli@latest
 
-      # Deploy backend to Railway
+      # Authenticate Railway CLI with the token (non-interactive)
+      - name: Railway login (CI)
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+        run: |
+          # login in CI mode using the token
+          railway login --ci "$RAILWAY_TOKEN"
+          # optional check
+          railway whoami
+
+      # Deploy backend to Railway (use project id to avoid interactive link)
       - name: Deploy Backend to Railway
         working-directory: backend
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          RAILWAY_PROJECT_ID: ${{ secrets.RAILWAY_PROJECT_ID }}
         run: |
-          railway link --project ${{ secrets.RAILWAY_PROJECT_ID }}
-          railway up --detach
+          # deploy (non-interactive). --project accepts project id or project name
+          railway up --project "$RAILWAY_PROJECT_ID" --detach
