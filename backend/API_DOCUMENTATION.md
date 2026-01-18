@@ -276,5 +276,3 @@ The API supports conversion across multiple categories, including:
 * Anonymous users can convert units but cannot save history
 * Authenticated users have isolated, private conversion histories
 * API is designed for easy frontend integration (MERN stack)
-
----
