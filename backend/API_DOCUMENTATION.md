@@ -278,11 +278,3 @@ The API supports conversion across multiple categories, including:
 * API is designed for easy frontend integration (MERN stack)
 
 ---
-
-## Version
-
-```
-v1.0.0
-```
-
----
