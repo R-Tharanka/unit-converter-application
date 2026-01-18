@@ -12,36 +12,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout repository
+      # 1. Checkout repository
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Setup Node.js
+      # 2. Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      # Install Railway CLI
+      # 3. Install Railway CLI
       - name: Install Railway CLI
         run: npm install -g @railway/cli@latest
 
-      # Authenticate Railway CLI with the token (non-interactive)
-      - name: Railway login (CI)
-        env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
-        run: |
-          # authenticate non-interactively using the service token
-          railway login --token "$RAILWAY_TOKEN"
-          # optional check
-          railway whoami
-
-      # Deploy backend to Railway (use project id to avoid interactive link)
+      # 4. Deploy backend to Railway
       - name: Deploy Backend to Railway
         working-directory: backend
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
-          RAILWAY_PROJECT_ID: ${{ secrets.RAILWAY_PROJECT_ID }}
         run: |
-          # deploy (non-interactive). --project accepts project id or project name
-          railway up --project "$RAILWAY_PROJECT_ID" --detach
+          railway up --detach
