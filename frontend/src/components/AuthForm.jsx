@@ -47,33 +47,44 @@ export default function AuthForm() {
   };
 
   return (
-    <div className="max-w-md w-full mx-auto mt-10 p-6 border rounded-lg shadow bg-white">
-      <h2 className="text-2xl font-semibold mb-4 text-center">
-        {isLogin ? 'Login' : 'Register'}
-      </h2>
+    <div className="max-w-md w-full mx-auto mt-6 p-6 border rounded-xl shadow bg-white">
+      <div className="mb-6 text-center">
+        <h2 className="text-2xl font-semibold text-gray-900">
+          {isLogin ? 'Welcome back' : 'Create your account'}
+        </h2>
+        <p className="text-sm text-gray-500 mt-1">
+          {isLogin ? 'Sign in to save your conversions.' : 'Register to save your conversion history.'}
+        </p>
+      </div>
 
       {error && (
         <p className="mb-3 text-sm text-red-600 text-center">{error}</p>
       )}
 
       <form onSubmit={handleSubmit} className="space-y-4">
-        <input
-          type="email"
-          placeholder="Email"
-          className="w-full p-2 border rounded"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          aria-label="Email"
-        />
+        <div className="space-y-1">
+          <label className="text-sm text-gray-600">Email</label>
+          <input
+            type="email"
+            placeholder="you@example.com"
+            className="w-full p-2 border rounded"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            aria-label="Email"
+          />
+        </div>
 
-        <input
-          type="password"
-          placeholder="Password"
-          className="w-full p-2 border rounded"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          aria-label="Password"
-        />
+        <div className="space-y-1">
+          <label className="text-sm text-gray-600">Password</label>
+          <input
+            type="password"
+            placeholder="••••••••"
+            className="w-full p-2 border rounded"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            aria-label="Password"
+          />
+        </div>
 
         <button
           type="submit"
@@ -84,7 +95,7 @@ export default function AuthForm() {
         </button>
       </form>
 
-      <p className="mt-4 text-sm text-center">
+      <p className="mt-4 text-sm text-center text-gray-600">
         {isLogin ? 'No account?' : 'Already have an account?'}{' '}
         <button
           type="button"
