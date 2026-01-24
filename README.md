@@ -30,9 +30,9 @@ A simple unit conversion web application (MERN) that converts between different 
 We implemented the following branching strategy:
 - `main` - Production branch
 - `develop` - Integration branch
-- `backend` - Backend development branch
-- `frontend` - Frontend development branch
-- `developer-hhh` - CI/CD Pipeline & Integration Setup
+- `feature-praveen` - Backend development branch
+- `feature-shehani` - Frontend development branch
+- `feature-hemal` - CI/CD Pipeline & Integration Setup
 - `feature/readme-update-a` - Handling merge conflict
 - `frontend-backup` - Frontend Redundancy & Fallback Strategy
 - `feature/frontend-setup` - Frontend environment & dependency Setup
