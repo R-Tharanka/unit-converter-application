@@ -14,9 +14,11 @@ const app = express();
 app.use(helmet());
 app.use(express.json());
 
+const allowedOrigin = (process.env.CLIENT_ORIGIN || 'http://localhost:5173').replace(/\/+$/, '');
+
 // CORS for the Vite dev server (adjust origin as needed)
 app.use(cors({
-  origin: process.env.CLIENT_ORIGIN || 'http://localhost:5173',
+  origin: allowedOrigin,
   credentials: true,
 }));
 
