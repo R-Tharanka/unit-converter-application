@@ -89,3 +89,4 @@ Uploads the static assets to `frontend/dist`. Serve these files with a static fi
 
 ## License
 This project is licensed under the terms of the [MIT License](LICENSE).
+ 
