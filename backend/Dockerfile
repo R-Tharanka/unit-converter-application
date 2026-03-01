@@ -1,6 +1,6 @@
 # backend/Dockerfile
 # Multi-stage build: install deps in stage 'deps' then copy into small runtime image
-FROM node:18-alpine AS deps
+FROM node:20-alpine AS deps
 WORKDIR /app
 
 # Install only dependencies (no dev)
@@ -8,7 +8,7 @@ COPY package*.json ./
 RUN npm ci --omit=dev
 
 # Final runtime image: smaller and only production deps
-FROM node:18-alpine AS runner
+FROM node:20-alpine AS runner
 WORKDIR /app
 
 # Create non-root user 'node' already exists in official node images
