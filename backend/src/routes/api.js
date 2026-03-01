@@ -11,10 +11,13 @@ const router = express.Router();
 router.post('/auth/register', registerHandler);
 router.post('/auth/login', loginHandler);
 
-// Optional health check endpoint (useful for deployment monitoring)
-// router.get('/health', (req, res) => {
-//     res.json({ ok: true, uptime: process.uptime() });
-// });
+//Optional health check endpoint (useful for deployment monitoring)
+router.get('/health', (req, res) => {
+  res.status(200).json({ 
+    ok: true,
+    uptime: process.uptime(),
+    status: "OK" });
+});
 
 // convert - allow anonymous conversion but require auth to save
 router.post('/convert', validateConvert, (req, res, next) => {
